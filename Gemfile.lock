@@ -52,6 +52,10 @@ GEM
     mime-types (1.25.1)
     multi_json (1.8.2)
     pg (0.16.0)
+    pg_search (0.7.2)
+      activerecord (>= 3.1)
+      activesupport (>= 3.1)
+      arel
     polyglot (0.3.3)
     rack (1.4.5)
     rack-cache (1.2)
@@ -105,6 +109,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   jquery-rails
   pg
+  pg_search
   rails (= 3.2.14)
   sass-rails (~> 3.2.3)
   uglifier (>= 1.0.3)
