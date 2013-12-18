@@ -1,0 +1,7 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: search_demo_development
+  host: localhost
+  username: TD
+  password:
