@@ -78,8 +78,7 @@ CREATE TABLE searches (
     id integer NOT NULL,
     searchable_type character varying(255),
     searchable_id integer,
-    term text,
-    termforsearch tsvector
+    term_tsv tsvector
 );
 
 
@@ -179,17 +178,10 @@ ALTER TABLE ONLY users
 
 
 --
--- Name: index_searches_on_term; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+-- Name: index_searches_on_term_tsv; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
-CREATE INDEX index_searches_on_term ON searches USING gin (to_tsvector('english'::regconfig, term));
-
-
---
--- Name: termforsearch_gin; Type: INDEX; Schema: public; Owner: -; Tablespace: 
---
-
-CREATE INDEX termforsearch_gin ON searches USING gin (termforsearch);
+CREATE INDEX index_searches_on_term_tsv ON searches USING gin (term_tsv);
 
 
 --
@@ -212,7 +204,3 @@ INSERT INTO schema_migrations (version) VALUES ('20131213201435');
 INSERT INTO schema_migrations (version) VALUES ('20131213203739');
 
 INSERT INTO schema_migrations (version) VALUES ('20131213221545');
-
-INSERT INTO schema_migrations (version) VALUES ('20131213221546');
-
-INSERT INTO schema_migrations (version) VALUES ('20131213221547');

@@ -1,11 +1,19 @@
 class CreateSearches < ActiveRecord::Migration
 
-  def change
+  def up
     create_table :searches do |t|
       t.string :searchable_type
       t.integer :searchable_id
-      t.text :term
     end
+
+    execute <<-SQL
+      ALTER TABLE searches
+        ADD COLUMN term_tsv tsvector;
+    SQL
+  end
+
+  def down
+    drop_table :searches
   end
 
 end
