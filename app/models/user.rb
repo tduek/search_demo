@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
   def add_to_search
     query = <<-SQL
       INSERT INTO searches (searchable_type, searchable_id, term_tsv)
-        VALUES ('User', ?, to_tsvector( ? )\);
+        VALUES ('User', ?, to_tsvector( ? ));
       SQL
 
     self.class.execute([query, self.id.to_s, self.name])

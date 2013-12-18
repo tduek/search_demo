@@ -11,3 +11,7 @@ Post.delete_all
     )
   end
 end
+
+me = User.create(name: "tommy duek")
+me.posts.create(title: "tommy's title", body: "check out my body! -by tommy")
+
