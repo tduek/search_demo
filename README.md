@@ -4,9 +4,9 @@ This is a simple demo of how to use the pg_search gem. It's not the most
 efficient, but it's VERY simple and easy to use.
 
 There are two kinds of searches pg_search gives us:
-* Search scopes: search a specific model. Useful for 'advanced search'
+* **Search scopes**: search a specific model. Useful for 'advanced search'
    features where a user can specify what each field should contain.
-* Multi-search: search against many columns in many models.
+* **Multi-search**: search against many columns in many models.
 
 ## Getting Started
 
@@ -45,15 +45,13 @@ Multi-search is more interesting. It's good for when you want to implement a
 search against multiple models.
 
 #### Set up
-It takes a little more setup to do multisearch. It's till easy, though.
+It takes a little more setup to do multisearch. It's still easy, though.
 
-1. `rails generate pg_search:migration:multisearch`
+* `rails generate pg_search:migration:multisearch`
 
-This is going to create a new migration.
+    * This is going to create a new migration.
+    * Run it: `bundle exec rake db:migrate`
 
-2. `bundle exec rake db:migreate`
-
-Run it.
 
 Then you can do this:
 
