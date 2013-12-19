@@ -48,7 +48,6 @@ search against multiple models.
 It takes a little more setup to do multisearch. It's still easy, though.
 
 * `rails generate pg_search:migration:multisearch`
-
     * This is going to create a new migration.
     * Run it: `bundle exec rake db:migrate`
 
